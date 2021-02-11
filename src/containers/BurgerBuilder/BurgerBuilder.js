@@ -33,6 +33,10 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: false });
   };
 
+  continuePurchaseHandler = () => {
+    alert("Continue!");
+  };
+
   updatePurchaseState(ingredientsNew) {
     const ingredients = { ...ingredientsNew };
     const purchasable = Object.values(ingredients).reduce(
@@ -77,6 +81,7 @@ class BurgerBuilder extends Component {
           <OrderSummary
             ingredients={this.state.ingredients}
             cancel={this.cancelPurchaseHandler}
+            continue={this.continuePurchaseHandler}
           />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
