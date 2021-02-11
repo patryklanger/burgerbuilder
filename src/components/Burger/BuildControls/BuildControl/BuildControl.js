@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./BuildControl.module.css";
 
 const BuildControl = (props) => {
-  console.log(props.disabled);
   return (
     <div>
       <div className={classes.BuildControl}>
