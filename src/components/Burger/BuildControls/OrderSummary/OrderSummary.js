@@ -15,8 +15,12 @@ const OrderSummary = (props) => {
       <h3>Your order</h3>
       <p>Delicious burger with the following ingredients:</p>
       <ul>{ingredientSummary}</ul>
-      <Button action={props.cancel}>order</Button>
-      <Button action={props.cancel}>cancel</Button>
+      <Button btnType="Success" action={props.cancel}>
+        order
+      </Button>
+      <Button btnType="Danger" action={props.cancel}>
+        cancel
+      </Button>
     </React.Fragment>
   );
 };

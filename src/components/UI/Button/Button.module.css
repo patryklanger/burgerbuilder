@@ -1,17 +1,25 @@
 .Button {
-  text-transform: uppercase;
-  background-color: #dad735;
+  background-color: transparent;
+  border: none;
+  color: white;
   outline: none;
   cursor: pointer;
-  border: 1px solid #966909;
-  color: #966909;
-  font-family: inherit;
-  padding: 10px 30px;
-  box-shadow: 2px 2px 2px #966909;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.OrderButton:hover,
-.OrderButton:active {
-  background-color: #a0db41;
-  border: 1px solid #966909;
-  color: #966909;
+
+.Button:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.Success {
+  color: #5c9210;
+}
+
+.Danger {
+  color: #944317;
 }
