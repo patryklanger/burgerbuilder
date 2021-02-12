@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../../UI/Button/Button";
 
 const OrderSummary = (props) => {
@@ -15,6 +15,10 @@ const OrderSummary = (props) => {
       <h3>Your order</h3>
       <p>Delicious burger with the following ingredients:</p>
       <ul>{ingredientSummary}</ul>
+      <p>
+        <strong>Total Price: ${props.price.toFixed(2)}</strong>
+      </p>
+      <p>Continiue to Checkout?</p>
       <Button btnType="Success" action={props.continue}>
         order
       </Button>
@@ -24,5 +28,4 @@ const OrderSummary = (props) => {
     </React.Fragment>
   );
 };
-
 export default OrderSummary;
