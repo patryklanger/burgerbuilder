@@ -4,11 +4,14 @@ import classes from "./Modal.module.css";
 
 class Modal extends Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.opacity !== this.props.opacity;
+    return (
+      nextProps.opacity !== this.props.opacity ||
+      nextProps.loading !== this.props.loading
+    );
   }
 
   render() {
-    console.log("render");
+    // console.log("render");
     return (
       <React.Fragment>
         <Backdrop show={this.props.opacity} cancel={this.props.cancel} />
