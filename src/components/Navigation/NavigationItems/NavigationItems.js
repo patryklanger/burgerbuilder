@@ -10,6 +10,9 @@ const NavigationItems = (props) => (
     <NavigationItem link="/checkout" exact>
       Checkout
     </NavigationItem>
+    <NavigationItem link="/orders" exact>
+      Orders
+    </NavigationItem>
   </ul>
 );
 

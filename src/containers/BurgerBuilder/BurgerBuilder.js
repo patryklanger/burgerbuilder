@@ -27,13 +27,11 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     axios
       .get(
-        "https://burgerbuilder-6ffb7-default-rtdb.europe-west1.firebasedatabase.app/orders/ingredients.json"
+        "https://burgerbuilder-6ffb7-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json"
       )
       .then((response) => {
-        console.log(response);
         this.setState({ ingredients: response.data });
       })
       .catch((err) => this.setState({ error: true }));
@@ -78,9 +76,19 @@ class BurgerBuilder extends Component {
           loading: false,
         });
       }); */
-    console.log(this.state.ingredients);
-    this.props.history.push("/checkout", {
-      ingredients: this.state.ingredients,
+    const queryParams = [];
+    for (let i in this.state.ingredients) {
+      queryParams.push(
+        encodeURIComponent(i) +
+          "=" +
+          encodeURIComponent(this.state.ingredients[i])
+      );
+      queryParams.push("price=" + this.state.totalPrice);
+    }
+    const queryString = queryParams.join("&");
+    this.props.history.push({
+      pathname: "/checkout",
+      search: "?" + queryString,
     });
   };
 
